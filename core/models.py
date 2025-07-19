@@ -7,6 +7,3 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.nome
-from django.db import models
-
-# Create your models here.

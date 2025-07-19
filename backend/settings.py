@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-4tuvryhxaggfu=z*9o1y(nkw)dt0j_bnv%&q4m&#o1awbs%&sa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = ['.onrender.com','127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -54,6 +54,7 @@ STATIC_URL = '/static/'
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Adicione esta linha no topo
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -62,6 +63,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Configurações do CORS
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'backend.urls'
 
